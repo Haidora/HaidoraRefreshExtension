@@ -1,0 +1,2 @@
+# HaidoraRefreshExtension
+extension of refresh
