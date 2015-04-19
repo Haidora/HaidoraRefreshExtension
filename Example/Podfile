@@ -1,0 +1,3 @@
+target 'HaidoraRefreshExtension', :exclusive => true do
+  pod "HaidoraRefreshExtension", :path => "../"
+end

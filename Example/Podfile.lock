@@ -1,0 +1,20 @@
+PODS:
+  - HaidoraRefresh (0.1)
+  - HaidoraRefreshExtension (0.1):
+    - HaidoraRefresh
+    - HaidoraRefreshExtension/Color (= 0.1)
+  - HaidoraRefreshExtension/Color (0.1):
+    - HaidoraRefresh
+
+DEPENDENCIES:
+  - HaidoraRefreshExtension (from `../`)
+
+EXTERNAL SOURCES:
+  HaidoraRefreshExtension:
+    :path: ../
+
+SPEC CHECKSUMS:
+  HaidoraRefresh: 54e8d674188966a93cb3e68de4fdeafb11a45922
+  HaidoraRefreshExtension: 54cf9a07bb38f5e5a8392763f607144a2547bf70
+
+COCOAPODS: 0.35.0
