@@ -15,4 +15,10 @@
 
 #endif
 
+#if __has_include("HDGifAnimator.h")
+
+#import "HDGifAnimator.h"
+
+#endif
+
 #endif

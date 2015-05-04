@@ -8,6 +8,10 @@
 
 	![](Gif/ExtensionColor/refresh.gif)
 
+* ###Gif
+
+    ![](Gif/ExtensionGif/refresh.gif)
+
 ## Installation
 
 HaidoraRefreshExtension is available through [HaidoraPods](https://github.com/Haidora/HaidoraPods). To install

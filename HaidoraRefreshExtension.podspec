@@ -15,6 +15,13 @@ Pod::Spec.new do |s|
   s.subspec 'Color' do |hdColor|
     hdColor.source_files = 'Pod/Classes/ExtensionColor/**/*'
   end
+  s.subspec 'Gif' do |hdGif|
+    hdGif.source_files = 'Pod/Classes/ExtensionGif/**/*'
+    hdGif.dependency 'AnimatedGIFImageSerialization', '~> 0.2.0'
+    hdGif.resource_bundles = {
+        'HaidoraRefreshExtensionGif' => ['Pod/Assets/ExtensionGif/*.*']
+    }
+  end
 #s.resource_bundles = {
 #    'HaidoraRefreshExtension' => ['Pod/Assets/*.png']
 #  }

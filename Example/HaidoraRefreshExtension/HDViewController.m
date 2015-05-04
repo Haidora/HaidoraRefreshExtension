@@ -19,12 +19,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    __weak typeof(self) weakself = self;
     self.tableView.tableFooterView = [[UIView alloc] init];
     // Do any additional setup after loading the view, typically from a nib.
     [self.tableView addPullToRefreshWithActionHandler:^{
       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)),
                      dispatch_get_main_queue(), ^{
-                       [self.tableView stopPullRefresh];
+                       [weakself.tableView stopPullRefresh];
                      });
     } animator:[[HDSimpleColorAnimator alloc] init]];
 
@@ -32,7 +34,7 @@
     [self.tableView addInfiniteToRefreshWithActionHandler:^{
       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)),
                      dispatch_get_main_queue(), ^{
-                       [self.tableView stopInfiniteRefresh];
+                       [weakself.tableView stopInfiniteRefresh];
                      });
     } animator:animator];
 }
