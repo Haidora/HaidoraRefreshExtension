@@ -21,4 +21,10 @@
 
 #endif
 
+#if __has_include("HDIndicatorAnimator.h")
+
+#import "HDIndicatorAnimator.h"
+
+#endif
+
 #endif

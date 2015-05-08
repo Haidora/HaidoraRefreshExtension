@@ -4,13 +4,17 @@
 
 ## Usage
 
-* ###SimpleColor
+* ###[SimpleColor](https://github.com/inspace-io/INSPullToRefresh)
 
 	![](Gif/ExtensionColor/refresh.gif)
 
-* ###Gif
+* ###[Gif](https://github.com/uzysjung/UzysAnimatedGifPullToRefresh)
 
     ![](Gif/ExtensionGif/refresh.gif)
+
+* ###[Indicator](https://github.com/ermalkaleci/CarbonKit)
+
+    ![](Gif/ExtensionIndicator/refresh.gif)
 
 ## Installation
 
@@ -28,3 +32,4 @@ mrdaios, mrdaios@gmail.com
 ## License
 
 HaidoraRefreshExtension is available under the MIT license. See the LICENSE file for more info.
+
