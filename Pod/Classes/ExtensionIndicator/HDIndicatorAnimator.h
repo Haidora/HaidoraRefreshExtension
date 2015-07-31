@@ -11,8 +11,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <HaidoraRefreshDefine.h>
 
-#import <AnimatedGIFImageSerialization.h>
-
 // fork from https://github.com/ermalkaleci/CarbonKit
 @interface HDIndicatorAnimator : NSObject <HaidoraRefreshAnimator>
 

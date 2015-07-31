@@ -1,8 +1,9 @@
 Pod::Spec.new do |s|
   s.name             = "HaidoraRefreshExtension"
-  s.version          = "0.3"
-  s.summary          = "A short description of HaidoraRefreshExtension."
+  s.version          = "0.1.0"
+  s.summary          = "HaidoraRefreshExtension."
   s.description      = <<-DESC
+                      HaidoraRefresh几个自定义拉下动画.
                        DESC
   s.homepage         = "https://github.com/Haidora/HaidoraRefreshExtension"
   s.license          = 'MIT'

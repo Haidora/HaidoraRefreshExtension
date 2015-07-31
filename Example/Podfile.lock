@@ -1,17 +1,17 @@
 PODS:
   - AnimatedGIFImageSerialization (0.2.0)
-  - HaidoraRefresh (0.1)
-  - HaidoraRefreshExtension (0.1):
+  - HaidoraRefresh (0.1.0)
+  - HaidoraRefreshExtension (0.1.0):
     - HaidoraRefresh
-    - HaidoraRefreshExtension/Color (= 0.1)
-    - HaidoraRefreshExtension/Gif (= 0.1)
-    - HaidoraRefreshExtension/Indicator (= 0.1)
-  - HaidoraRefreshExtension/Color (0.1):
+    - HaidoraRefreshExtension/Color (= 0.1.0)
+    - HaidoraRefreshExtension/Gif (= 0.1.0)
+    - HaidoraRefreshExtension/Indicator (= 0.1.0)
+  - HaidoraRefreshExtension/Color (0.1.0):
     - HaidoraRefresh
-  - HaidoraRefreshExtension/Gif (0.1):
+  - HaidoraRefreshExtension/Gif (0.1.0):
     - AnimatedGIFImageSerialization (~> 0.2.0)
     - HaidoraRefresh
-  - HaidoraRefreshExtension/Indicator (0.1):
+  - HaidoraRefreshExtension/Indicator (0.1.0):
     - HaidoraRefresh
 
 DEPENDENCIES:
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AnimatedGIFImageSerialization: b0f0cfe71eac1ee45a3d57ae533c23b8e6f29501
-  HaidoraRefresh: 54e8d674188966a93cb3e68de4fdeafb11a45922
-  HaidoraRefreshExtension: 56ac4f75306c0c0ae7898b38370fe76a37848973
+  HaidoraRefresh: a22d82f80ac6b2ace739ca6af74f962a7179bed2
+  HaidoraRefreshExtension: 0e4930e8d2a24fa817140eefcf31cab5cc786895
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2
