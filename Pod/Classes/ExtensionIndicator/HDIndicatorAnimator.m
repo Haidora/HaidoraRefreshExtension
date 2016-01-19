@@ -30,6 +30,9 @@
     {
         _colorIndex = 0;
         _colors = @[ [UIColor redColor], [UIColor greenColor], [UIColor blueColor] ];
+        _view = [UIView new];
+        _container = [UIView new];
+        _pathLayer = [CAShapeLayer layer];
     }
     return self;
 }
@@ -89,16 +92,16 @@
     animations.repeatCount = INFINITY;
     [_pathLayer addAnimation:animations forKey:STROKE_ANIMATION];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(),
-                   ^{
-                     [self changeColor];
-                   });
+    [self performSelector:@selector(changeColor) withObject:nil afterDelay:1.5];
 }
 
 - (void)stopLoadingAnimation
 {
     [_container.layer removeAnimationForKey:ROTATE_ANIMATION];
     [_pathLayer removeAnimationForKey:STROKE_ANIMATION];
+    [HDIndicatorAnimator cancelPreviousPerformRequestsWithTarget:self
+                                                        selector:@selector(changeColor)
+                                                          object:nil];
 }
 
 - (void)changeProgress:(CGFloat)progress
@@ -118,8 +121,7 @@
     CGFloat width = CGRectGetWidth(superView.bounds);
     if (_view.superview == nil)
     {
-        _view =
-            [[UIView alloc] initWithFrame:(CGRect){(width - 40) / 2, (height - 40) / 2, 40, 40}];
+        _view.frame = (CGRect){(width - 40) / 2, (height - 40) / 2, 40, 40};
         _view.layer.backgroundColor = [UIColor whiteColor].CGColor;
         _view.layer.cornerRadius = CGRectGetWidth(_view.bounds) / 2;
         _view.layer.shadowOffset = CGSizeMake(0, 0.7);
@@ -128,7 +130,7 @@
         _view.layer.shadowOpacity = 0.12;
         [superView addSubview:_view];
 
-        _container = [[UIView alloc] initWithFrame:_view.bounds];
+        _container.frame = _view.bounds;
         _container.backgroundColor = [UIColor clearColor];
         [_view addSubview:_container];
 
@@ -140,7 +142,6 @@
                                        startAngle:0
                                          endAngle:2 * M_PI
                                         clockwise:YES];
-        _pathLayer = [CAShapeLayer layer];
         _pathLayer.fillColor = nil;
         _pathLayer.strokeColor = ((UIColor *)[_colors firstObject]).CGColor;
         _pathLayer.lineWidth = 3;
@@ -154,12 +155,10 @@
 
 - (void)changeColor
 {
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.5 * NSEC_PER_SEC), dispatch_get_main_queue(),
-                   ^{
-                     [self changeColor];
-                   });
-
+    [HDIndicatorAnimator cancelPreviousPerformRequestsWithTarget:self
+                                                        selector:@selector(changeColor)
+                                                          object:nil];
+    [self performSelector:@selector(changeColor) withObject:nil afterDelay:1.5];
     _colorIndex++;
     if (_colorIndex > _colors.count - 1)
     {
@@ -170,6 +169,13 @@
     [CATransaction setDisableActions:YES];
     _pathLayer.strokeColor = ((UIColor *)_colors[_colorIndex]).CGColor;
     [CATransaction commit];
+}
+
+- (void)dealloc
+{
+    [HDIndicatorAnimator cancelPreviousPerformRequestsWithTarget:self
+                                                        selector:@selector(changeColor)
+                                                          object:nil];
 }
 
 @end
